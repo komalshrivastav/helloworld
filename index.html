@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javasript form validation</title>
+</head>
+<body>
+    <form action="#" method="post" onsubmit="return validation();">
+    <input type="text"  placeholder=Name name="name" id="name">
+    <input type="email" placeholder="Email" name="email" id="email">
+    <input type="password"placeholder="Password" name="password" id="password">
+    <input type="submit" name="submit" value="Insert Now">
+    </form>
+    <div id="erusult" style="color:red;"></div>
+    <script type="text/javascript">
+    function validation(){
+    var name= document.getElementById('name').value;
+    var email= document.getElementById('email').value;
+    var password= document.getElementById('password').value;
+    if(name=='' || password==''|| email=='')
+    {
+        document.getElementById("eresult").innerHTML = "All field reqired";
+        return false;
+    }
+    else if(name.length<5){
+        document.getElementById("eresult").innerHTML = "Name must be atleast 5 characters";
+        return false;    
+    }
+    else if(name.length<4){
+    document.getElementById("eresult").innerHTML = "password must be atleast 4 characters";
+
+        return false;
+    }
+    else{
+        return true;
+    }
+    }
+    
+    
+    
+    
+    </script>
+</body>
+</html>
+
+
