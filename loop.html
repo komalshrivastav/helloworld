@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        #calender {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        #calender-wrapper {
+            width:300px;
+        }
+        #calender-month{
+            font-size:1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        #calender div {
+            text-align:center;
+            background:white;
+            margin:2px;
+            padding:10px;
+        }
+
+        .heading {
+            background: #333 !important;
+            color: #fff;
+        }
+
+        #next-month{
+            float: right;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="calender-wrapper">
+        <div id="next-prev">
+            <button id="prev-month">prev</button>
+            <button id="next-month">next</button>
+    </div>
+    <div id="calender-month"></div>
+    <div id="calender">
+        
+        </div>
+        <script>
+
+            function generateMonthlyCalender(month){
+                //month name
+                document.querySelector('#calender-month').textContent=month;
+            }
+            let divs = "";
+
+            divs += `
+            <div class="heading">sun</div>
+            <div class="heading">mon</div>
+            <div class="heading">tue</div>
+            <div class="heading">wed</div>
+            <div class="heading">thu</div>
+            <div class="heading">fri</div>
+            <div class="heading">sat</div>
+            `;
+
+            let i;
+            for (let i = 1; i <= 31; i++) {
+                //divs += '<div>' + i + '</div>';
+                divs += `<div>${i}</div>`;
+            }
+
+
+
+            document.querySelector('#calender').innerHTML = divs;
+           
+         generateMonthlyCalender('September'); //call the function
+        </script>
+
+
+</body>
+
+</html>
